@@ -65,4 +65,5 @@ footer {
 
 .tweet-icons i:hover {
   color: #cb9827;
+  cursor: pointer;
 }
