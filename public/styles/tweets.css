@@ -1,32 +1,68 @@
 #tweet-posts {
   margin-top: 1.5em;
 
+  display: flex;
+  flex-direction: column;
 }
 
 .tweet {
+  font-weight: 600;
   border: 4px solid;
-  padding: 1em 0.5em;
+  padding: 0.25em 0.5em 0.5em;
 
   display: flex;
   flex-direction: column;
 }
 
+.tweet:hover {
+  box-shadow: 6px 5px #c7c9dc;
+}
 
+header {
+  font-size: 20px;
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet-pic {
+  height: 50px;
+  width: 50px;
+  font-size: 10px;
+}
+
+.username {
+  font-weight: 300;
+  padding-left: 0.75em;
+
+  flex-grow: 1;
+}
+
+.tweet-handle {
+  color: #c9cee4;
+  padding-right: 17px;
+}
 
 .tweet-content {
+  font-size: 21px;
   border-bottom: 4px solid;
-  border-block-end:
+  padding: 0 17px;
 }
 
 footer {
   font-size: 15px;
-  padding: 10px 20px;
+  padding: 10px 17px;
 
   display: flex;
   justify-content: space-between;
 }
 
 .tweet-icons i {
+  color: #47569e;
   padding: 0 5px;
+}
+
+.tweet-icons i:hover {
+  color: #cb9827;
 }
