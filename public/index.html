@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Google Fonts -->
+    <!-- External Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">  
@@ -18,12 +18,14 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" />
+    <link rel="stylesheet" href="/styles/tweets.css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -50,7 +52,6 @@
     <main class="tweet-container">
       <section class="tweet-new">
         <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
           <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
       
           <div class="tweet-submit">
@@ -58,6 +59,30 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <!-- Generated tweets -->
+      <section id="tweet-posts">
+        <article class="tweet">
+          <header>
+            <img class="tweet-pic" src="https://i.imgur.com/nlhLi3I.png">
+            <h4 class="username">Newton</h4>
+            <h4 class="tweet-handle">@SirIsaac</h4>
+          </header>
+
+          <div class="tweet-content">
+            <p>Ocean father, I was wrong. Years I follow just the sun. Now I see your darkness holds the key. I close my eyes and I begin to see</p>
+          </div>
+
+          <footer>
+            <p class="tweet-date">10 days ago</p>
+            <span class="tweet-icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </span>
+          </footer>
+        </article>
+        <p>praesent semper feugiat. Sit amet mauris commodo quis. Sed blandit libero volutpat sed cras ornare arcu. Justo laoreet sit amet cursus sit amet dictum. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. A diam maecenas sed enim ut sem viverra. Blandit massa enim nec dui nunc mattis enim ut tellus. In tellus integer feugiat scelerisque varius morbi.j</p>
       </section>
     </main>
 
