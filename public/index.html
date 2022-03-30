@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,9 +47,19 @@
   </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus nisl tincidunt eget nullam non. Sodales ut etiam sit amet nisl purus in. Sed turpis tincidunt id aliquet risus feugiat. Ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus. Pretium nibh ipsum consequat nisl vel pretium lectus quam. Odio eu feugiat pretium nibh ipsum consequat nisl vel pretium. Condimentum lacinia quis vel eros donec. Enim lobortis scelerisque fermentum dui faucibus in. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl.
-      </p>
+    <main class="tweet-container">
+      <section class="new-tweet">
+        <form method="POST" action="/tweets" id="tweet-input">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+      
+          <!-- Submit button -->
+          <div class="tweet-submit">
+            <button type="submit" class="button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
 
   </body>
