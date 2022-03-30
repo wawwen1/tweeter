@@ -10,10 +10,10 @@
   align-items: center;
 }
 
-.avatar-picture {
-  
-}
-
 .avatar-name {
   margin-top: -15px;
+}
+
+.notbold {
+  font-weight: normal;
 }
