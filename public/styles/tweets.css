@@ -1,3 +1,32 @@
 #tweet-posts {
-  
+  margin-top: 1.5em;
+
+}
+
+.tweet {
+  border: 4px solid;
+  padding: 1em 0.5em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.tweet-content {
+  border-bottom: 4px solid;
+  border-block-end:
+}
+
+footer {
+  font-size: 15px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-icons i {
+  padding: 0 5px;
 }
