@@ -25,6 +25,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /* contains input for a new tweet + list of tweets */
  .tweet-container {
    margin: auto;
    width: 90%;
