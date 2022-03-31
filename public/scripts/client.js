@@ -4,51 +4,44 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1648532134625
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1648618534625
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Ocean father, I was wrong. Years I follow just the sun. Now I see your darkness holds the key. I close my eyes and I begin to see"
-    },
-    "created_at": 1648618534625
-  }
-];
+// const tweetData = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1648532134625
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1648618534625
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Ocean father, I was wrong. Years I follow just the sun. Now I see your darkness holds the key. I close my eyes and I begin to see"
+//     },
+//     "created_at": 1648618534625
+//   }
+// ];
 
 $(document).ready(function() {
 
-  
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      $("#tweet-posts").append(createTweetElement(tweet));
-    }
-  }
-  
   const createTweetElement = function(tweet) {
     let markup = `
     <article class="tweet">
@@ -75,16 +68,32 @@ $(document).ready(function() {
     
     return markup;
   };
+
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      $("#tweet-posts").append(createTweetElement(tweet));
+    }
+  };
   
   $(".tweet-new form").submit(function(event) {
-    event.preventDefault();       //prevents the default page reload
+    event.preventDefault();     //prevents the default page reload
     
     $.ajax({
-      type: "POST",
+      method: "POST",
       url: "/tweets",
       data: $(this).serialize()
-  })
-})
+    });
+  });
+  
+  const loadTweets = function() {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    }).then(function(data) {
+      renderTweets(data);
+    });
+  };
 
-  renderTweets(tweetData);
+  loadTweets();
+
 });
