@@ -42,6 +42,7 @@
 
 $(document).ready(function() {
 
+  //markup html for tweets
   const createTweetElement = function(tweet) {
     let markup = `
     <article class="tweet">
@@ -56,7 +57,7 @@ $(document).ready(function() {
     </div>
     
     <footer class="tweet-extras">
-    <span class="tweet-date">${tweet.created_at}</span>
+    <span class="tweet-date">${timeago.format(tweet.created_at)}</span>
     <span class="tweet-icons">
     <i class="fa-solid fa-flag"></i>
     <i class="fa-solid fa-retweet"></i>
@@ -69,12 +70,14 @@ $(document).ready(function() {
     return markup;
   };
 
+  //appends tweets to the tweet container
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       $("#tweet-posts").append(createTweetElement(tweet));
     }
   };
   
+  //event listener
   $(".tweet-new form").submit(function(event) {
     event.preventDefault();     //prevents the default page reload
     
