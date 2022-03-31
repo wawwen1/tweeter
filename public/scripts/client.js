@@ -76,6 +76,15 @@ $(document).ready(function() {
     return markup;
   };
   
+  $(".tweet-new form").submit(function(event) {
+    event.preventDefault();       //prevents the default page reload
+    
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+  })
+})
+
   renderTweets(tweetData);
-  
 });
