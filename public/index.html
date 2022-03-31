@@ -52,6 +52,20 @@
     <!-- Page-specific (main) content here -->
     <main class="tweet-container">
       <section class="tweet-new">
+
+        <div id="error">
+          <span class="empty">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Your tweet is empty!
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </span>
+          <span class="too-long">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Your tweet exceeds the 140 character limit!
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </span>
+        </div>
+
         <form action="/tweets" method="POST">
           <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
       
@@ -63,26 +77,6 @@
       </section>
       <!-- Generated tweets -->
       <section id="tweet-posts">
-        <!-- <article class="tweet">
-          <header>
-            <img class="tweet-pic" src="https://i.imgur.com/nlhLi3I.png">
-            <h4 class="username">Newton</h4>
-            <h4 class="tweet-handle">@SirIsaac</h4>
-          </header>
-
-          <div class="tweet-content">
-            <p>Ocean father, I was wrong. Years I follow just the sun. Now I see your darkness holds the key. I close my eyes and I begin to see</p>
-          </div>
-
-          <footer>
-            <span class="tweet-date">10 days ago</span>
-            <span class="tweet-icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </span>
-          </footer>
-        </article> -->
       </section>
     </main>
 
