@@ -18,7 +18,7 @@
   box-shadow: 6px 5px #c7c9dc;
 }
 
-header {
+.tweet-user {
   font-size: 20px;
 
   display: flex;
@@ -26,13 +26,13 @@ header {
   justify-content: space-between;
 }
 
-.tweet-pic {
+.tweet-avatar {
   height: 50px;
   width: 50px;
   font-size: 10px;
 }
 
-.username {
+.tweet-username {
   font-weight: 300;
   padding-left: 0.75em;
 
@@ -50,7 +50,7 @@ header {
   padding: 0 17px;
 }
 
-footer {
+.tweet-extras {
   font-size: 15px;
   padding: 10px 17px;
 
