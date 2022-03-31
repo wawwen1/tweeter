@@ -18,6 +18,12 @@ const tweetData = {
 
 }
 
+const renderTweets = (tweets) {
+  for (let tweet of tweets) {
+    $("#tweet-posts").prepend(createTweetElement(tweet));
+  }
+}
+
 const createTweetElement = (tweet) => {
   let $tweet = `
   <article class="tweet">
@@ -26,9 +32,11 @@ const createTweetElement = (tweet) => {
         <h4 class="tweet-username">${tweet.user.name}</h4>
         <h4 class="tweet-handle">${tweet.user.handle}</h4>
     </header>
+
     <div class="tweet-content">
       <p>${tweet.content.text}</p>
     </div>
+
     <footer class="tweet-extras">
       <span class="tweet-date">${tweet.created_at}</span>
       <span class="tweet-icons">
