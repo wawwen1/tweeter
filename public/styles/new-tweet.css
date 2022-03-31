@@ -32,3 +32,32 @@
   color: white;
   background-color: #4056A1;
 }
+
+.empty {
+  width: 100%;
+  color: red;
+  border: 3px solid red;
+  padding: 0.25em 0.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.too-long {
+  width: 100%;
+  color: red;
+  border: 3px solid red;
+  padding: 0.25em 0.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#error i {
+  padding: 0 15px;
+  display: flex;
+}
