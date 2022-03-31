@@ -6,18 +6,25 @@
 
 $(document).ready(function() {
 
+  //prevent cross-site scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //markup html for tweets
   const createTweetElement = function(tweet) {
     let markup = `
     <article class="tweet">
     <header class="tweet-user">
-    <img class="tweet-avatar" src="${tweet.user.avatars}">
-    <h4 class="tweet-username">${tweet.user.name}</h4>
-    <h4 class="tweet-handle">${tweet.user.handle}</h4>
+    <img class="tweet-avatar" src="${escape(tweet.user.avatars)}">
+    <h4 class="tweet-username">${escape(tweet.user.name)}</h4>
+    <h4 class="tweet-handle">${escape(tweet.user.handle)}</h4>
     </header>
     
     <div class="tweet-content">
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
     </div>
     
     <footer class="tweet-extras">
@@ -53,8 +60,12 @@ $(document).ready(function() {
       return;
     }
     $.post("/tweets", $(this).serialize())
-    .then(() => loadTweets());
+    .then(() => {
+      loadTweets();        //loads tweets w/o refresh
+      $(".tweet-new form").trigger("reset");
+      $(".counter").text(140);        //clears counter & input
 
+    });
   });
   
   const loadTweets = function() {
