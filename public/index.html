@@ -40,46 +40,48 @@
       </div>
     </nav>
 
-    <header class="avatar-header">
-      <div class="avatar-picture">
+    <div class="page">
+
+      <header class="avatar-header">
+        <div class="avatar-picture">
           <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="avatar-name">
-          <h2>Warren <span class = "notbold">Roque</span></h2>
-      </div>
-  </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="tweet-container">
-      <section class="tweet-new">
-
-        <div id="error">
-          <span class="empty">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            Your tweet is empty!
-            <i class="fa-solid fa-triangle-exclamation"></i>
-          </span>
-          <span class="too-long">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            Your tweet exceeds the 140 character limit!
-            <i class="fa-solid fa-triangle-exclamation"></i>
-          </span>
         </div>
-
-        <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+        <br>
+        <div class="avatar-name">
+          <h2>Warren <span class = "notbold">Roque</span></h2>
+        </div>
+      </header>
       
-          <div class="tweet-submit">
-            <button type="submit" name="button">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+      <!-- Page-specific (main) content here -->
+      <main class="tweet-container">
+        <section class="tweet-new">
+          
+          <div id="error">
+            <span class="empty">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Your tweet is empty!
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </span>
+            <span class="too-long">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Your tweet exceeds the 140 character limit!
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </span>
           </div>
-        </form>
-      </section>
-      <!-- Generated tweets -->
-      <section id="tweet-posts">
-      </section>
-    </main>
-
+          
+          <form action="/tweets" method="POST">
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+            
+            <div class="tweet-submit">
+              <button type="submit" name="button">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <!-- Generated tweets -->
+        <section id="tweet-posts">
+        </section>
+      </main>
+    </div>
   </body>
 </html>
