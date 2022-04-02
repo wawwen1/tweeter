@@ -35,3 +35,16 @@ body {
    flex-direction: column;
    justify-content: center;
  }
+
+@media only screen and (min-width: 1024px) {
+
+  .page {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .tweet-container {
+    margin-right: 2em;
+  }
+}
