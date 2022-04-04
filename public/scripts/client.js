@@ -51,8 +51,6 @@ $(document).ready(function() {
     }
   };
   
-
-  
   //submit event listener 
   $(".tweet-new form").submit(function(event) {
     event.preventDefault();     //prevents the default page reload
@@ -72,6 +70,7 @@ $(document).ready(function() {
 
     $.post("/tweets", $(this).serialize())
     .then(() => {
+      $("#tweet-posts").empty();
       loadTweets();        //loads tweets w/o refresh
       $(".counter").text(140);        //clears counter & input
       $(".tweet-new form").trigger("reset");
